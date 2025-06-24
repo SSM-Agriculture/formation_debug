@@ -16,3 +16,4 @@ exemple1 <- function(indicateur) {
 }
 
 exemple1("Petale")
+exemple1("petale")
