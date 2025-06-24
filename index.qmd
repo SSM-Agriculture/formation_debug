@@ -1,0 +1,84 @@
+---
+title: "Outils de debugging"
+subtitle: "Un outil Shiny pour explorer les bases de données et les tables parquet"
+date: today
+date-format: "DD/MM/YYYY"
+author: "SSP/DEMESIS/BQIS/PAOS"
+description: |
+  Présentation des fonctionnalités de debugging au GUR de 2025
+
+slide-tone: false # for blind readers
+chalkboard: false # press the B key to toggle chalkboard
+transition: slide
+fig-cap-location: bottom
+self-contained: true
+
+toc: true
+toc-title: Sommaire
+toc-depth: 1
+toc-float: true
+
+# multiplex: true
+execute:
+  echo: false
+  warning: false
+  cache: false
+editor:
+  render-on-save: true
+---
+
+## Pourquoi faire du debugging/débogage ?
+
+
+Le débogage, ou debugging en anglais, est une étape cruciale dans le développement de tout programme informatique.  
+
+Cette présentation vous présente quelques outils que vous avez déjà à disposition sous **votre RStudio sur Cerise** afin de vous aider à trouver par vous-même la source de vos bugs.
+
+## Exemple de code
+
+Soit la fonction suivante :  
+  
+
+```{.r}
+library(dplyr)
+
+exemple1 <- function(indicateur) {
+
+  if (indicateur == "Sepale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Sepal")) |> 
+      head(3)
+  } else if (indicateur == "Petale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Petal")) |> 
+      head(3)
+  }
+  return(resultat)
+    
+}
+```
+
+## Des erreurs/bugs
+
+```{.r}
+## Tout est ok
+exemple1("Petale")
+
+> exemple1("Petale")
+  Species Petal.Length Petal.Width
+1  setosa          1.4         0.2
+2  setosa          1.4         0.2
+3  setosa          1.3         0.2
+
+```
+  
+  
+```{.r}
+## Un bug
+exemple1("petale")
+
+> exemple1("petale")
+Erreur dans exemple1("petale") : objet 'resultat' introuvable
+```
+
+
