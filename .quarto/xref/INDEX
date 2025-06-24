@@ -1,5 +1,8 @@
 {
   "template.qmd": {
     "template.html": "265ccbf2"
+  },
+  "index.qmd": {
+    "index.html": "07738fb7"
   }
 }
