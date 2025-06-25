@@ -1,6 +1,6 @@
 # Le print {.backgroundTitre}
 
-## Les prints (1/N)
+## Les prints (1/3)
 
 Il existe un outil très simple (universel car non spécifique à R), parfois décrié mais qui reste efficace : ajouter la fonction `print()` dans votre code R pour examiner le contenu d'un objet à un moment donné.  
 
@@ -25,7 +25,7 @@ exemple1 <- function(indicateur) {
 }
 ```
 
-## Les prints (2/N)
+## Les prints (2/3)
 
 Cela renvoie pour le cas du bug :  
 
@@ -40,14 +40,14 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 => L'objet `resultat` n'ayant pas été créé, R ne peut pas le trouver :).
 
 
-## Les prints (2/N)
+## Les prints (2/3)
 
 {{< fa thumbs-up >}} **Avantages du print :**  
 - Simplicité, universalité    
 - Pas d'interruption du code  
 - Compatible dans tous les environnements (RStudio, VSCode, batchs...)  
 
-<br>
+<br> 
 
 {{< fa thumbs-down >}} **Inconvénients du print :**  
 - Intrusif dans le code
