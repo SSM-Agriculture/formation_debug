@@ -106,4 +106,9 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 
 {{< include 07_logs.qmd >}}
 
+## Bibliographie
 
+Pour en savoir plus :  
+
+- [Debugging with the RStudio IDE](https://support.posit.co/hc/en-us/articles/205612627-Debugging-with-the-RStudio-IDE)  
+- [Debugging - Advanced R](https://adv-r.hadley.nz/debugging.html)
