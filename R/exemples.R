@@ -6,7 +6,7 @@ library(dplyr)
 
 exemple1 <- function(indicateur) {
   
-  print(indicateur) # <- on ajout un print()
+  print(indicateur) # <- on ajoute un print()
   
   if (indicateur == "Sepale") {
     resultat <- iris |> 
@@ -21,7 +21,28 @@ exemple1 <- function(indicateur) {
   
 }
 
-exemple1("Petale")
+exemple1("petale")
+
+# Browser -------------------------------------------------------------
+
+
+exemple1 <- function(indicateur) {
+  
+  browser() # <- on ajoute un browser()
+  
+  if (indicateur == "Sepale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Sepal")) |> 
+      head(3)
+  } else if (indicateur == "Petale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Petal")) |> 
+      head(3)
+  }
+  return(resultat)
+  
+}
+
 exemple1("petale")
 
 
@@ -44,6 +65,5 @@ exemple1 <- function(indicateur) {
   
 }
 
-exemple1("Petale")
 exemple1("petale")
 
