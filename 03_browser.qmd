@@ -36,6 +36,7 @@ exemple1 <- function(indicateur) {
 {{< fa thumbs-up >}} **Avantages du browser :**  
 - Facile à mettre en place  
 - Permet l'exécution pas à pas  
+- Fonctionne dans les chunks quarto  
 
 <br>
 

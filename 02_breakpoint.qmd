@@ -93,7 +93,7 @@ La flèche verte se positionne à l'emplacement du code qui sera exécuté à l'
 <br>
 
 {{< fa thumbs-down >}} **Inconvénients des breakpoints :**  
-- Spécifique à RStudio  
+- Spécifique à RStudio et aux programmes R    
 - Pas versionnable avec Git  
 - Difficile à utiliser dans certains cas dynamiques (les shiny par ex.)
 
