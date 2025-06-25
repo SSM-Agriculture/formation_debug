@@ -85,7 +85,7 @@ La flèche verte se positionne à l'emplacement du code qui sera exécuté à l'
 
 ## Les breakpoints (5/6)
 
-{{< fa thumbs-up >}} **Avantage des breakpoints :**  
+{{< fa thumbs-up >}} **Avantages des breakpoints :**  
 - Très visuels  
 - Pas besoin de modifier votre code R  
 - Permet l'exécution pas à pas  
