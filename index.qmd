@@ -48,11 +48,9 @@ Cette présentation vous présente quelques outils que vous avez déjà à dispo
 ## Exemple de code
 
 Soit la fonction suivante :  
-  
+  b
 
 ```{.r}
-library(dplyr)
-
 exemple1 <- function(indicateur) {
 
   if (indicateur == "Sepale") {
@@ -67,6 +65,7 @@ exemple1 <- function(indicateur) {
   return(resultat)
     
 }
+
 ```
 
 ## Des erreurs/bugs
@@ -82,7 +81,8 @@ exemple1("Petale")
 3  setosa          1.3         0.2
 
 ```
-  
+
+<br>
   
 ```{.r}
 ## Un bug
@@ -93,3 +93,94 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 ```
 
 
+## Les breakpoints (1/N)
+
+Avant de lancer vos traitements, il peut être utile de définir des breakpoints ("point d'arrêt") sur une ligne de code.  
+**Lorsque R atteint cette ligne pendant l'exécution, il met le script en pause.**  
+
+[Pour cela, on peut cliquer dans la marge à gauche du numéro de ligne dans l'éditeur.]{.Terre_battue2}
+
+=> **Cela permet d'avoir accès à l'environnement d'exécution**, ce qui signifie que vous pouvez voir les valeurs de toutes vos variables, exécuter des commandes dans la console comme si vous étiez à cet endroit précis du code, et **avancer pas à pas** pour observer comment les variables changent.
+
+![](img/breakpoint.png){fig-align="center"}  
+
+Les fonctions R qui contiennent un breakpoint ont un point rouge dans l'onglet Environnement de RStudio :  
+
+![](img/breakpoint_fonction.png){fig-align="center"}  
+
+## Les breakpoints (2/N)
+
+En appuyant sur le bouton `source` de RStudio :  
+
+::: columns
+::: {.column width="50%"}
+![](img/breakpoint_point1.png){fig-align="center"} 
+
+![](img/breakpoint_steps.png){fig-align="center"} 
+
+:::
+
+::: {.column width="50%"}
+[La flèche verte et le texte en surbrillance permettent d'identifier le bout de code en cours d'exécution]{.green}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Appuyer sur le bouton "Next" ou taper la lettre "n" dans la console de RStudio pour exécuter le script pas à pas.
+:::
+:::
+
+## Les breakpoints (3/N)
+
+En appuyant sur le bouton `source` de RStudio :  
+
+::: columns
+::: {.column width="50%"}
+
+![](img/breakpoint_point3.png){fig-align="center"}  
+
+![](img/breakpoint_point4.png){fig-align="center"} 
+
+:::
+
+::: {.column width="50%"}
+gdsg 
+
+
+gdsfg
+
+
+gdgdgd
+:::
+:::
+
+## Les breakpoints (4/N)
+
+::: columns
+::: {.column width="50%"}
+
+![](img/breakpoint_point5.png){fig-align="center"} 
+
+![](img/breakpoint_point6.png){fig-align="center"} 
+
+:::
+
+::: {.column width="50%"}
+gdsg 
+
+
+gdsfg
+
+
+gdgdgd
+:::
+:::
+
+## Les breakpoints (5/N)
+
+**Avantage des breakpoints :**  
+- Les breakpoints s'appliquent immédiatement et ne vous obligent pas à modifier votre code R.
+
+![](img/breakpoint_circle.png){fig-align="center"}  
