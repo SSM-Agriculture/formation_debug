@@ -27,8 +27,19 @@ editor:
   render-on-save: true
 ---
 
+## Sommaire
+
+- Pourquoi faire du debugging/débogage ?
+- Le print
+- Astuce dans les chaine de traitements
+- Le breakpoint / point d'arrêt
+- Les fonctions debug() / debugonce()
+- Le package boomer
+- Les logs
+
 ## Pourquoi faire du debugging/débogage ?
 
+<br>
 
 Le débogage, ou debugging en anglais, est une étape cruciale dans le développement de tout programme informatique.  
 
