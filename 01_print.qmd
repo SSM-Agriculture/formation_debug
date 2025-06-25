@@ -9,7 +9,7 @@ Par exemple :
 ```{.r}
 exemple1 <- function(indicateur) {
   
-  print(indicateur) # <- on ajout un print()
+  print(indicateur) # <- on ajoute un print()
   
   if (indicateur == "Sepale") {
     resultat <- iris |> 
@@ -40,7 +40,7 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 => L'objet `resultat` n'ayant pas été créé, R ne peut pas le trouver :).
 
 
-## Les prints (2/3)
+## Les prints (3/3)
 
 {{< fa thumbs-up >}} **Avantages du print :**  
 - Simplicité, universalité    
