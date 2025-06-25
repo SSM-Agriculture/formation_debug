@@ -49,7 +49,6 @@ Cette présentation vous présente quelques outils que vous avez déjà à dispo
 ## Exemple de code
 
 Soit la fonction suivante :  
-  b
 
 ```{.r}
 exemple1 <- function(indicateur) {
@@ -94,7 +93,7 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 ```
 
 
-## Les breakpoints (1/N)
+## Les breakpoints (1/6)
 
 Avant de lancer vos traitements, il peut être utile de définir des breakpoints ("point d'arrêt") sur une ligne de code.  
 **Lorsque R atteint cette ligne pendant l'exécution, il met le script en pause.**  
@@ -109,7 +108,7 @@ Les fonctions R qui contiennent un breakpoint ont un point rouge dans l'onglet E
 
 ![](img/breakpoint_fonction.png){fig-align="center"}  
 
-## Les breakpoints (2/N)
+## Les breakpoints (2/6)
 
 En appuyant sur le bouton `source` de RStudio :  
 
@@ -133,7 +132,7 @@ Appuyer sur le bouton "Next" ou taper la lettre "n" dans la console de RStudio p
 :::
 :::
 
-## Les breakpoints (3/N)
+## Les breakpoints (3/6)
 
 En appuyant sur le bouton `Next` de RStudio :  
 
@@ -150,16 +149,12 @@ En appuyant sur le bouton `Next` de RStudio :
 Les objets se mettent à jour dans l'onglet Environnement de RStudio.
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
 
-La flèche verte se positionne à l'emplacement du code qui sera exécuté à l'étape suivante.
+[La flèche verte se positionne à l'emplacement du code qui sera exécuté à l'étape suivante.]{.green}
 :::
 :::
 
-## Les breakpoints (4/N)
+## Les breakpoints (4/6)
 
 En appuyant sur le bouton `Next` de RStudio :  
 
@@ -176,24 +171,29 @@ Les objets se mettent à jour dans l'onglet Environnement de RStudio.
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
 
 La flèche verte se positionne à l'emplacement du code qui sera exécuté à l'étape suivante.
 :::
 :::
 
-## Les breakpoints (5/N)
+## Les breakpoints (5/6)
 
 **Avantage des breakpoints :**  
-- Très visuels ;  
-- Pas besoin de modifier votre code R ;  
-- Permet l'exécution pas à pas.  
+- Très visuels  
+- Pas besoin de modifier votre code R  
+- Permet l'exécution pas à pas  
 
-** Inconvénients des breakpoints :**  
-- Spécifique à RStudio ;  
-- Pas versionnable avec Git ;  
+**Inconvénients des breakpoints :**  
+- Spécifique à RStudio  
+- Pas versionnable avec Git  
 - Difficile à utiliser dans certains cas dynamiques (les shiny par ex.)
 
+## Les breakpoints (6/6)
+
+
+::: callout-warning
+## Remarque
+Si lorsque vous injectez un breakpoint dans votre programme R **celui-ci s'affiche en cercle rouge**, il faudra alors sauvegarder votre script et le sourcer pour retrouver le rond rouge.
+
 ![](img/breakpoint_circle.png){fig-align="center"}  
+:::
