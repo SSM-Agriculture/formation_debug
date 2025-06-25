@@ -1,3 +1,5 @@
 # Les logs {.backgroundTitre}
 
 ## Les logs (1/N)
+
+voir /var/data/nfs/CERISE/04-Espace-Echanges/Ordonnancement/requetes_bdni/BDNI_effectifs_bovins.R
