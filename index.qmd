@@ -1,5 +1,5 @@
 ---
-title: "Outils de debugging"
+title: "Outils de debugging/débogage"
 subtitle: "Un outil Shiny pour explorer les bases de données et les tables parquet"
 date: today
 date-format: "DD/MM/YYYY"
