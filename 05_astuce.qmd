@@ -1,0 +1,3 @@
+# Astuce dans les chaine de traitements {.backgroundTitre}
+
+## Une astuce (1/N)
