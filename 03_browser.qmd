@@ -1,3 +1,46 @@
 # La fonction browser {.backgroundTitre}
 
-## La fonction browser (1/N)
+## La fonction browser (1/3)
+
+La fonction browser() est un compromis entre la fonction print() et les breakpoints.  
+
+- Elle peut s'insérer à n'importe quel endroit du code comme print().  
+- Elle permet l'exécution pas à pas comme les breakpoints.  
+
+
+## La fonction browser (2/3)
+
+Par exemple :  
+
+```{.r}
+exemple1 <- function(indicateur) {
+  
+  browser() # <- on ajoute un browser()
+  
+  if (indicateur == "Sepale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Sepal")) |> 
+      head(3)
+  } else if (indicateur == "Petale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Petal")) |> 
+      head(3)
+  }
+  return(resultat)
+  
+}
+```
+
+## La fonction browser (3/3)
+
+{{< fa thumbs-up >}} **Avantages du browser :**  
+- Facile à mettre en place  
+- Permet l'exécution pas à pas  
+
+<br>
+
+{{< fa thumbs-down >}} **Inconvénients du browser :**  
+- Intrusif dans le code  
+- Moins visuels que les breakpoints  
+- On oublie souvent de les retirer du code une fois les bugs résolus.  
+
