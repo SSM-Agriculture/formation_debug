@@ -1,3 +1,41 @@
 # Le print {.backgroundTitre}
 
 ## Les prints (1/N)
+
+Il existe un outil très simple (universel car non spécifique à R), parfois décrié mais qui reste efficace : ajouter la fonction `print()` dans votre code R pour examiner le contenu d'un objet à un moment donné.  
+
+Par exemple :  
+
+```{.r}
+exemple1 <- function(indicateur) {
+  
+  print(indicateur) # <- on ajout un print()
+  
+  if (indicateur == "Sepale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Sepal")) |> 
+      head(3)
+  } else if (indicateur == "Petale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Petal")) |> 
+      head(3)
+  }
+  return(resultat)
+  
+}
+```
+
+## Les prints (2/N)
+
+Cela renvoie pour le cas du bug :  
+
+```{.r}
+> exemple1("petale")
+[1] "petale"
+Erreur dans exemple1("petale") : objet 'resultat' introuvable
+```
+
+=> On récupère ainsi la valeur contenue dans l'objet indicateur "petale" ce qui nous permet de comprendre qu'on ne rentre dans aucune des 2 conditions de la structure conditionnelle de `exemple1()`.  
+
+=> L'objet `resultat` n'ayant pas été créé, R ne peut pas le trouver :).
+
