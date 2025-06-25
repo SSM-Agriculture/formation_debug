@@ -39,3 +39,17 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 
 => L'objet `resultat` n'ayant pas été créé, R ne peut pas le trouver :).
 
+
+## Les prints (2/N)
+
+{{< fa thumbs-up >}} **Avantages du print :**  
+- Simplicité, universalité    
+- Pas d'interruption du code  
+- Compatible dans tous les environnements (RStudio, VSCode, batchs...)  
+
+<br>
+
+{{< fa thumbs-down >}} **Inconvénients du print :**  
+- Intrusif dans le code
+- Pas d'inspection de l'environnement à la volée  
+- On oublie souvent de les retirer du code une fois les bugs résolus.
