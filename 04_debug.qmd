@@ -1,3 +1,54 @@
 # Les fonctions debug() / debugonce() {.backgroundTitre}
 
-## Les fonctions debug() / debugonce() (1/N)
+## Les fonctions debug() / debugonce() (1/4)
+
+Les fonctions debug() et debugonce() permettent d'insérer la fonction browser() via l'appel à une fonction.  
+
+- debug(fonction) : active le mode pas-à-pas pour la fonctio à chaque appel (nécessite la fonction undebug() pour le désactiver).  
+
+- debugonce(f) : active le mode debug uniquement au prochain appel de la fonction.
+
+## Les fonctions debug() / debugonce() (2/4)
+
+```{.r}
+exemple1 <- function(indicateur) {
+  
+  if (indicateur == "Sepale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Sepal")) |> 
+      head(3)
+  } else if (indicateur == "Petale") {
+    resultat <- iris |> 
+      select(Species,starts_with("Petal")) |> 
+      head(3)
+  }
+  return(resultat)
+  
+}
+```
+
+
+## Les fonctions debug() / debugonce() (3/4)
+
+```{.r}
+debug(exemple1) # pour lancer le debuggeur sur la fonction
+exemple1("petale") # maintenant le debuggeur se lance qd on soumet la fonction
+undebug(exemple1) # pour arrêter le debuggeur sur la fonction
+
+debugonce(exemple1) # Pour lancer le debuggeur qu'une seule fois
+exemple1("petale") # le debuggeur ne va se lancer qu'une seule fois
+```
+
+## Les fonctions debug() / debugonce() (4/4)
+
+{{< fa thumbs-up >}} **Avantages des debug() :**  
+- Facile à mettre en place  
+- Permet l'exécution pas à pas  
+- Ne modifie pas le code source des fonctions  
+
+<br>
+
+{{< fa thumbs-down >}} **Inconvénients des debug() :**  
+- Ne fonctionne qu'avec les fonctions nommées  
+- On oublie souvent de les retirer du code une fois les bugs résolus au moment des appels des fonctions.  
+
