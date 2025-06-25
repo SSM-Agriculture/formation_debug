@@ -1,7 +1,7 @@
 library(dplyr)
 
 exemple1 <- function(indicateur) {
-
+  
   if (indicateur == "Sepale") {
     resultat <- iris |> 
       select(Species,starts_with("Sepal")) |> 
@@ -12,8 +12,9 @@ exemple1 <- function(indicateur) {
       head(3)
   }
   return(resultat)
-    
+  
 }
 
-exemple1("Petale")
+# exemple1("Petale")
 exemple1("petale")
+
