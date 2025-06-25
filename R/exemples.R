@@ -92,3 +92,18 @@ undebug(exemple1) # pour arrêter le debuggeur sur la fonction
 
 debugonce(exemple1) # Pour lancer le debuggeur qu'une seule fois
 exemple1("petale") # le debuggeur ne va se lancer qu'une seule fois
+
+
+# Astuce ------------------------------------------------------------------
+
+resultat <- iris  %>%
+  group_by(Species) %>%
+  summarise(moyenne_long_petale = mean(Petal.Length, na.rm = TRUE)) %>% 
+  { print(head(.)); . } %>% 
+  rename(Especes = Species)
+
+iris  %>%
+  group_by(Species) %>%
+  summarise(moyenne_long_petale = mean(Petal.Length, na.rm = TRUE)) %>% 
+  { tab_agr <<- . } %>% 
+  rename(Especes = Species)
