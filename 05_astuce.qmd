@@ -1,3 +1,80 @@
 # Astuce dans les chaine de traitements {.backgroundTitre}
 
-## Une astuce (1/N)
+## Une astuce (1/5)
+
+A l'intérieur d'une chaîne de traitements {tidyverse} avec %>%, il est possible d'afficher ou de sauvegarder un résultat intermédiaire pour résoudre rapidement un bug.
+
+**Si on veut simplement afficher le résultat intermédiaire, la syntaxe générale est :**  
+
+```{.r}
+data |>
+etape_une() |>
+{ print(head(.)); . } %>% 
+etape_deux()
+```
+
+## Une astuce (2/5)
+
+Un exemple :  
+
+```{.r}
+iris  %>%
+  group_by(Species) %>%
+  summarise(moyenne_long_petale = mean(Petal.Length, na.rm = TRUE)) %>% 
+  { print(head(.)); . } %>% 
+  rename(Especes = Species)
+```
+
+On obtient dans la console :  
+
+```{.r}
+# A tibble: 3 × 2
+  Species    moyenne_long_petale
+  <fct>                    <dbl>
+1 setosa                    1.46
+2 versicolor                4.26
+3 virginica                 5.55
+```
+
+
+## Une astuce (3/5)
+
+**Si on veut stocker le résultat intermédiaire, , la syntaxe générale est**  :
+
+```{.r}
+data |>
+etape_une() |>
+{ result_interm <<- . } %>% # On peut donner le nom que l'on veut au résultat intermédiaire
+etape_deux()
+```
+
+
+## Une astuce (5/5)
+
+```{.r}
+iris  %>%
+  group_by(Species) %>%
+  summarise(moyenne_long_petale = mean(Petal.Length, na.rm = TRUE)) %>% 
+  { tab_agr <<- . } %>% 
+  rename(Especes = Species)
+```
+
+On obtient dans l'environnement :  
+
+![](img/tab_agr.png){fig-align="center"}  
+
+
+## Une astuce (5/5)
+
+{{< fa thumbs-up >}} **Avantages de l'astuce :**  
+- Pas d'interruption du code  
+- Pratique à mettre en place pour un debug rapide    
+
+<br>
+
+{{< fa thumbs-down >}} **Inconvénients de l'astuce :**  
+- Ne fonctionne qu'avec %>%  
+- On oublie souvent de les retirer du code une fois les bugs résolus
+
+
+
