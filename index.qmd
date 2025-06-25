@@ -178,12 +178,14 @@ La flèche verte se positionne à l'emplacement du code qui sera exécuté à l'
 
 ## Les breakpoints (5/6)
 
-**Avantage des breakpoints :**  
+{{< fa thumbs-up >}} **Avantage des breakpoints :**  
 - Très visuels  
 - Pas besoin de modifier votre code R  
 - Permet l'exécution pas à pas  
 
-**Inconvénients des breakpoints :**  
+<br>
+
+{{< fa thumbs-down >}} **Inconvénients des breakpoints :**  
 - Spécifique à RStudio  
 - Pas versionnable avec Git  
 - Difficile à utiliser dans certains cas dynamiques (les shiny par ex.)
