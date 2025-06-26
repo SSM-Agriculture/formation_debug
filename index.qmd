@@ -34,6 +34,7 @@ editor:
 - Le breakpoint / point d'arrêt
 - La fonction browser
 - Les fonctions debug() / debugonce()
+- L'option recover  
 - Astuce dans les chaine de traitements
 - Le package boomer
 - Les logs
@@ -100,11 +101,13 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 
 {{< include 04_debug.qmd >}}
 
-{{< include 05_astuce.qmd >}}
+{{< include 05_recover.qmd >}}
 
-{{< include 06_boomer.qmd >}}
+{{< include 06_astuce.qmd >}}
 
-{{< include 07_logs.qmd >}}
+{{< include 07_boomer.qmd >}}
+
+{{< include 08_logs.qmd >}}
 
 ## Bibliographie
 
