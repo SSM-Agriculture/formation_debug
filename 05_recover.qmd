@@ -1,0 +1,69 @@
+# L'option recover {.backgroundTitre}
+
+## L'option recover (1/4)
+
+L’option options(error = recover)  sert à déboguer une erreur quand elle se produit.  
+
+Quand une erreur se produit, cela :  
+
+- interrompt l'exécution  
+- affiche la pile des fonctions appelées  
+- permet de choisir un niveau (=frame) pour inspecter les variables à ce moment-là.  
+
+options(error = NULL) permet de rétablir le comportement par défaut.
+
+## L'option recover (2/4)
+
+```{.r}
+options(error = recover)
+
+f <- function(x) {
+  y <- x + 1
+  g(y)
+}
+
+g <- function(z) {
+  if (z < 10) {
+    res <- z*z
+  } 
+  return(res)
+}
+```
+
+## L'option recover (3/4)
+
+```{.r}
+f(2) # le mode debug ne s'active pas
+f(100) # le mode debug s'active
+```
+
+On obtient dans la console :  
+
+```{.r}
+> f(100) # le mode debug s'active
+Erreur dans g(y) : objet 'res' introuvable
+
+Enter a frame number, or 0 to exit   
+
+1: f(100)
+2: #3: g(y)
+
+Sélection : 
+```
+
+Taper 0, 1 ou 2 dans ce cas pour lancer le mode debug au niveau souhaité.
+
+
+## L'option recover (4/4)
+
+{{< fa thumbs-up >}} **Avantages de l'option recover :**  
+- Facile à mettre en place  
+- Permet rapidement de voir toutes les fonctions imbriquées qui ont conduit à l'erreur  
+- Ne modifie pas le code source des fonctions  
+
+<br>
+
+{{< fa thumbs-down >}} **Inconvénients de l'option recover :**  
+- Le mode debug ne s'active qu'après une erreur  
+- Pas utilisable pour les batchs par exemple
+
