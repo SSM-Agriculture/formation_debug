@@ -73,7 +73,7 @@ On obtient dans l'environnement :
 <br>
 
 {{< fa thumbs-down >}} **Inconvénients de l'astuce :**  
-- Ne fonctionne qu'avec %>%  
+- Ne fonctionne qu'avec %>% (pas avec |>) 
 - On oublie souvent de les retirer du code une fois les bugs résolus
 
 
