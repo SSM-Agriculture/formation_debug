@@ -94,6 +94,28 @@ debugonce(exemple1) # Pour lancer le debuggeur qu'une seule fois
 exemple1("petale") # le debuggeur ne va se lancer qu'une seule fois
 
 
+# Recover ------------------------------------------------------------------
+
+options(error = recover)
+
+f <- function(x) {
+  y <- x + 1
+  g(y)
+}
+
+g <- function(z) {
+  if (z < 10) {
+    res <- z*z
+  }
+  return(res)
+}
+
+f(2) # le mode debug ne s'active pas
+f(100) # le mode debug s'active
+
+# Pour rétablir le comportement par défaut
+options(error = NULL)
+
 # Astuce ------------------------------------------------------------------
 
 resultat <- iris  %>%
