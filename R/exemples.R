@@ -213,8 +213,6 @@ log_close()
 
 ### 3. Exemple en logguant une partie du pgm
 
-options("logr.on" = FALSE)
-
 # Un 1er traitement
 iris |> names()
 
@@ -229,6 +227,9 @@ donnees <- readRDS("data/iris.rds")
 
 # Fermeture de la log
 log_close()
+
+# Désactivation de logr
+options("logr.on" = FALSE)
 
 # La suite du programme
 resultat <- donnees |> 
