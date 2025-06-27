@@ -192,4 +192,7 @@ Quelques options utiles :
 
 Pour aller plus loin :
 
-{boomer} contient les fonctions `boom_on()` et `boom_off()` qui peuvent être utilisées dans le mode debug pas à pas de RStudio (voir [cette page](https://moodymudskipper.github.io/boomer/#boom_on-and-boom_off)).
+- {boomer} contient les fonctions `boom_on()` et `boom_off()` qui peuvent être utilisées dans le mode debug pas à pas de RStudio (voir [cette page](https://moodymudskipper.github.io/boomer/#boom_on-and-boom_off)).  
+
+- Le package contient également une fonctionnalité (encore expérimentale) pour aider les développeurs à debugger les applications shiny (voir [cette page](https://moodymudskipper.github.io/boomer/articles/shiny.html)).  
+
