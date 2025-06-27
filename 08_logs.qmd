@@ -35,6 +35,17 @@ Avec {logr}, il y a besoin de seulement 3 étapes pour créer un fichier de log 
 
 ## logr (2/N)
 
+**Structure d'une log :**  
+  
+- **Un en-tête** qui contient des informations essentielles : le chemin du fichier de log, le répertoire de travail, la version de R Core, le nom de l'utilisateur, le time-stanp d'exécution, les packages utilisés... 
+  
+- **Un corps/body** qui constitue le coeur de la log. Il contient tous les messages et les objets que vous voulez afficher tels qu'il s'afficherait dans la console de R.  
+  
+- **Un pied de page** qui contient le timestamp de fin d'exécution ainsi que le temps total écoulé pendant l'exécution du script R.
+
+
+## logr (3/N)
+
 Un exemple :  
 
 ```{.r}
@@ -55,7 +66,7 @@ resultat <- donnees |>
 log_close()
 ```
 
-## logr (3/N)
+## logr (4/N)
 
 Renvoie la log suivante (partie 1) :  
 
@@ -91,7 +102,7 @@ Log Elapsed Time: 0 00:00:00
 ```
 
 
-## logr (4/N)
+## logr (5/N)
 
 La fonction `log_print()` a également un alias utile pour la présentation des logs :  
   
@@ -109,7 +120,7 @@ Création des graphiques
 
 - `put()` est également un alias plus court que le nom `log_print()` dont le comportement est identique.
 
-## logr (5/N)
+## logr (6/N)
 
 La fonction `log_print()` (ou `put()`) permet également d'envoyer des résultats dans les logs.  
   
@@ -123,7 +134,7 @@ resultat <- donnees |>
   log_print()
 ```
 
-## logr (6/N)
+## logr (7/N)
 
 Renvoie :  
 
@@ -147,28 +158,30 @@ NOTE: Elapsed Time: 0.0980312824249268 secs
 ```
 
 
-## logr (7/N)
 ## logr (8/N)
+
+
+## logr (9/N)
 
 Quelques conseils si vous savez que vous allez utiliser logr sur votre programme :  
 
 - Remplacer vos commentaires dans votre code R par des `log_print()`  
 
-A la place de :
+A la place de :  
 ```{.r}
 # Traitement des données
 ```
 
-Mettre ça : 
+Mettre ça :  
 ```{.r}
 log_print("# Traitement des données")
 ```
 
 
-## logr (9/N)
-
-
 ## logr (10/N)
+
+
+## logr (11/N)
 
 {{< fa thumbs-up >}} **Avantages du browser :**  
 
