@@ -222,30 +222,25 @@ lf <- log_open(nom)
 
 Il est possible de **logguer seulement une partie d'un script R**. Pour cela, il existe les options `options("logr.on" = FALSE)` et `options("logr.on" = TRUE)`.  
 
-```{.r code-line-numbers="4-5"}
+```{.r code-line-numbers="4-5,14-15"}
 # Un 1er traitement
 iris |> names()
 
 # Activation de logr
 options("logr.on" = TRUE)
 
-# Ouverture de la log
 log_open("ma_log.log")
 
 log_print("## Lecture des données")
 donnees <- readRDS("data/iris.rds")
 
-# Fermeture de la log
 log_close()
-```
-```{.r code-line-numbers="1-2"}
+
 # Désactivation de logr
 options("logr.on" = FALSE)
 
 # La suite du programme
-resultat <- donnees |> 
-  group_by(Species) |> 
-  summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
+donnees |> ...
 ```
 
 ## logr (13/N)
@@ -283,6 +278,7 @@ log_close()
 
 Renvoie la log suivante :  
 ```{.sh}
+En-tête...
 =========================================================================
 
 group_by: one grouping variable (Species)
@@ -296,5 +292,6 @@ NOTE: Log Print Time:  2025-06-27 15:27:52.346752
 NOTE: Elapsed Time: 0.315893888473511 secs
 
 =========================================================================
+Pied de page..
 ```
 

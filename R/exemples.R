@@ -236,4 +236,17 @@ resultat <- donnees |>
   group_by(Species) |> 
   summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
 
+### 3. Exemple en logguant une partie du pgm
 
+options("logr.autolog" = TRUE)
+
+log_open("ma_log.log")
+
+donnees <- readRDS("data/iris.rds")
+
+resultat <- donnees |> 
+  group_by(Species) |> 
+  summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
+
+# Fermeture de la log
+log_close()
