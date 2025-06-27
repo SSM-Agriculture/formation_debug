@@ -1,4 +1,4 @@
-# Présentation des fonctionnalités de debugging en R
+# Présentation des fonctionnalités de debugging/débogage en R
 
 Support de présentation des fonctionnalités de debugging au groupe des utilisateurs de R du @SSM-Agriculture (2025). 
 
