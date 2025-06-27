@@ -59,7 +59,7 @@ log_close()
 
 Renvoie la log suivante (partie 1) :  
 
-```{.r}
+```{.sh}
 ========================================================================= 
 Log Path: ./log/ma_log.log 
 Working Directory: /var/data/nfs/CERISE/00-Espace-Personnel/damien.dotta 
@@ -73,7 +73,7 @@ Log Start Time: 2025-06-27 14:18:06.072628
 ========================================================================= 
 ```
 
-```{.r}
+```{.sh}
 ## Lecture des données 
 
 NOTE: Log Print Time:  2025-06-27 14:18:06.08348 
@@ -93,8 +93,32 @@ Log Elapsed Time: 0 00:00:00
 
 ## logr (4/N)
 
+La fonction `log_print()` a également un alias utile pour la présentation des logs :  
+  
+- `sep()` ajoute du texte dans la log comme `log_print()` mais ajoute des séparateurs avant/après le message.  
+Cet exemple :  
+```{.r}
+sep("Création des graphiques")
+```
+Va générer dans la log :
+```{.sh}
+========================================================================= 
+Création des graphiques 
+========================================================================= 
+```
+
 
 ## logr (5/N)
+
+{{< fa thumbs-up >}} **Avantages du browser :**  
+
+
+<br>
+
+{{< fa thumbs-down >}} **Inconvénients du browser :**  
+- Surcharge le code  
+
+
 
 
 voir /var/data/nfs/CERISE/04-Espace-Echanges/Ordonnancement/requetes_bdni/BDNI_effectifs_bovins.R
