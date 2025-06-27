@@ -1,3 +1,25 @@
 # Le package boomer {.backgroundTitre}
 
-## Le package boomer (1/N)
+## Le package boomer 
+
+Le package {boomer} fournit des outils de débogage qui permettent d'inspecter les résultats intermédiaires d'un code R.  
+L'output produit par le package se présente sous la forme de bombes 💣 d'où le nom.  
+
+Ses 2 principales fonctions sont :  
+- `boom()`qui permet de diagnostiquer rapidement la performance d'un bloc de code R.  
+- `rig`()`qui permet de tracer une fonction R et affiche automatiquement les mesures de performances à chacun de ses appels.  
+
+
+## (2/N)
+
+Un 1er exemple :  
+
+```{.r}
+
+
+
+```
+
+## Le package boomer (3/N)
+## Le package boomer (4/N)
+## Le package boomer (5/N)
