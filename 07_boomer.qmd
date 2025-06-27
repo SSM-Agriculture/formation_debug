@@ -197,7 +197,7 @@ Pour aller plus loin :
 - Le package contient également une fonctionnalité `boom_shinyApp()`(encore expérimentale) pour aider les développeurs à debugger les applications shiny (voir [cette page](https://moodymudskipper.github.io/boomer/articles/shiny.html)).  
 
 
-## La fonction rig() (1/N)
+## La fonction rig() (1/3)
 
 La fonction `rig()` 
 
@@ -210,7 +210,7 @@ mafonction <- function(x) {
 }
 ```
 
-## La fonction rig() (2/N)
+## La fonction rig() (2/3)
 
 On appelle la fonction avec `rig()` :  
 
@@ -231,7 +231,9 @@ x :
 [1] 4
 ```
 
-## La fonction rig() (3/N)
+Pour arrêter de surveiller une fonction, il existe la fonction `unrig()`.  
+
+## La fonction rig() (3/3)
 
 Avec une erreur :  
 
@@ -252,15 +254,6 @@ Erreur dans .Primitive("^")(x, 2) :
 👆 mafonction
 ```
 
-
-## La fonction rig() (4/N)
-
-Quelques informations complémentaires :  
-
-- Pour arrêter de surveiller une fonction, il existe la fonction `unrig()`.  
-- Si vous travaillez sur des fonctions à inclure dans un package, la fonction `rig_in_namespace()` est très utile.  
-
-## La fonction rig() (3/N)
 
 ## Avantages/Inconvénients de {boomer}
 
