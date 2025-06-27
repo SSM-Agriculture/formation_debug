@@ -6,7 +6,7 @@ Il existe un outil très simple (universel car non spécifique à R), parfois d�
 
 Par exemple :  
 
-```{.r}
+```{.r code-line-numbers="3"}
 exemple1 <- function(indicateur) {
   
   print(indicateur) # <- on ajoute un print()
