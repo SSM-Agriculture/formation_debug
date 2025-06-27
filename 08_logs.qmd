@@ -182,17 +182,12 @@ Traceback:
  [6] "5: group_by(donnees, species)"                                                  
  [7] "4: summarise(group_by(donnees, species), moy_long_petales = mean(Petal.Length, "
  [8] "       na.rm = TRUE))"                                                          
- [9] "3: print(x, ...)"                                                               
-[10] "2: log_print(.)"                                                                
-[11] "1: summarise(group_by(donnees, species), moy_long_petales = mean(Petal.Length, "
-[12] "       na.rm = TRUE)) %>% log_print()"                                          
+...                                                            
 ```
 Sans traceback :  
 ```{.sh}
 Error in group_by(donnees, species) : [38;5;255m [31m✖[38;5;255m Column `species` is not found.[39m 
 ```
-
-
 
 
 ## logr (10/N)
@@ -209,6 +204,14 @@ A la place de :
 Mettre ça :  
 ```{.r}
 log_print("# Traitement des données")
+```
+
+- A chaque exécution de vos programmes R, les logs seront par défaut écrasées. Si vous souhaitez les conserver, il est possible d'horodater leurs noms avec par exemple : 
+```{.r}
+nom <- paste0("mylog_", format(Sys.Date(), "%Y-%m-%d"))
+
+# Open log
+lf <- log_open(nom)
 ```
 
 
