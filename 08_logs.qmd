@@ -217,6 +217,8 @@ log_print("# Traitement des données")
 - Si vous souhaitez raccourcir la longueur de vos logs, il est possible de supprimer les lignes blanches avec l'option `options("logr.compact" = TRUE)`.  
 
 - Si vous souhaitez ne pas écrire les notes dans vos logs, il existe l'option `options("logr.notes" = FALSE)`  
+
+- Si vous souhaitez envoyer vos variables d'environnement dans vos logs, c'est possible via `put(Sys.getenv())` 
   
 - Pour plus de conseils, consultez [la FAQ du package](https://logr.r-sassy.org/articles/logr-faq.html) qui est très riche.
 
