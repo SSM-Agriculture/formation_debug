@@ -2,4 +2,13 @@
 
 ## Les logs (1/N)
 
+Pour compléter les différents outils de débogage, il reste un pratique essentielle à présenter qui est **l'écriture des logs**.  
+Les logs permettent de tracer l'historique des actions, de suivre le cheminement logique du code R et ainsi de repérer l'origine des bugs/erreurs.  
+
+Cette pratique est tellement répandue et utile qu'il existe de très nombreux packages R : [{futile.logger}](https://cran.r-project.org/web/packages/futile.logger/index.html), [{logging}](https://cran.r-project.org/web/packages/logging/index.html), [{lgr}](https://cran.r-project.org/web/packages/lgr/index.html), [{loggit}](https://cran.r-project.org/web/packages/loggit/index.html),
+[{log4r}](https://cran.r-project.org/web/packages/log4r/index.html) ...  
+  
+
+Dans cette présentation, nous allons utiliser le package [{logger}](https://daroczig.github.io/logger/index.html).
+
 voir /var/data/nfs/CERISE/04-Espace-Echanges/Ordonnancement/requetes_bdni/BDNI_effectifs_bovins.R
