@@ -1,11 +1,11 @@
 ---
 title: "Outils de debugging/débogage"
-subtitle: "Un outil Shiny pour explorer les bases de données et les tables parquet"
+subtitle: "Présentation des outils de débogage avec R et RStudio"
 date: today
 date-format: "DD/MM/YYYY"
 author: "SSP/DEMESIS/BQIS/PAOS"
 description: |
-  Présentation des fonctionnalités de debugging au GUR de 2025
+  Présentation des outils de débogage avec R et RStudio au GUR de 2025
 
 slide-tone: false # for blind readers
 chalkboard: false # press the B key to toggle chalkboard
