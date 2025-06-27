@@ -217,6 +217,36 @@ lf <- log_open(nom)
 
 ## logr (11/N)
 
+Il est possible de **logguer seulement une partie d'un script R**. Pour cela, il existe les options `options("logr.on" = FALSE)` et `options("logr.on" = TRUE)`.  
+
+```{.r code-line-numbers="4-5"}
+# Un 1er traitement
+iris |> names()
+
+# Activation de logr
+options("logr.on" = TRUE)
+
+# Ouverture de la log
+log_open("ma_log.log")
+
+log_print("## Lecture des données")
+donnees <- readRDS("data/iris.rds")
+
+# Fermeture de la log
+log_close()
+```
+```{.r code-line-numbers="1-2"}
+# Désactivation de logr
+options("logr.on" = FALSE)
+
+# La suite du programme
+resultat <- donnees |> 
+  group_by(Species) |> 
+  summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
+```
+
+## logr (12/N)
+
 - Si vous souhaitez raccourcir la longueur de vos logs, il est possible de supprimer les lignes blanches avec l'option `options("logr.compact" = TRUE)`.  
 
 - Si vous souhaitez ne pas écrire les notes dans vos logs, il existe l'option `options("logr.notes" = FALSE)`  
@@ -225,7 +255,7 @@ lf <- log_open(nom)
   
 - Pour plus de conseils, consultez [la FAQ du package](https://logr.r-sassy.org/articles/logr-faq.html) qui est très riche.
 
-## logr (12/N)
+## logr (13/N)
 
 {{< fa thumbs-up >}} **Avantages du browser :**  
 
