@@ -2,7 +2,7 @@
 
 ## L'option recover (1/4)
 
-L’option options(error = recover)  sert à déboguer une erreur quand elle se produit.  
+**L’option options(error = recover)  sert à déboguer une erreur quand elle se produit.**  
 
 Quand une erreur se produit, cela :  
 
@@ -10,7 +10,7 @@ Quand une erreur se produit, cela :
 - affiche la pile des fonctions appelées  
 - permet de choisir un niveau (=frame) pour inspecter les variables à ce moment-là.  
 
-options(error = NULL) permet de rétablir le comportement par défaut.
+**options(error = NULL) permet de rétablir le comportement par défaut.**
 
 ## L'option recover (2/4)
 
@@ -50,8 +50,8 @@ Enter a frame number, or 0 to exit
 
 Sélection : 
 ```
-
-Taper 0, 1 ou 2 dans ce cas pour lancer le mode debug au niveau souhaité.
+  
+**=> Taper 0, 1 ou 2 dans ce cas pour lancer le mode debug au niveau souhaité.**
 
 
 ## L'option recover (4/4)
