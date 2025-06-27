@@ -25,9 +25,21 @@ Le package {logr} présente plusieurs avantages :
 Avec {logr}, il y a besoin de seulement 3 étapes pour créer un fichier de log :
   
 - Ouvrir le fichier de log (avec `log_open()`)  
+    - Syntaxe : `log_open(chemin_vers_fichier_log)`  
+  
 - Ecrire dans le fichier de log (avec `log_print()`)  
+    - Syntaxe : `log_print("message à écrire dans la log")`  
+  
 - Fermer le fichier de log (avec `log_close()`)  
+    - Syntaxe : `log_close()`  
+
+## logr (2/N)
+
+Un exemple :  
+
+```{.r}
 
 
+```
 
 voir /var/data/nfs/CERISE/04-Espace-Echanges/Ordonnancement/requetes_bdni/BDNI_effectifs_bovins.R
