@@ -137,11 +137,33 @@ library("boomer")
 # Ecriture en une ligne
 boom(iris |> head(2) |> filter(Sepal.Length > 5))
 
-# Ecriture avec des crochets (=préférable)
+# Ecriture avec des crochets
 boom({
   iris |> 
     head(2) |> 
     filter(Sepal.Length > 5)
 })
 
+# Ecriture à la fin de la chaîne de traitement
+iris |> 
+  head(2) |> 
+  filter(Sepal.Length > 5) |> 
+  boom()
 
+# Un cas d'erreur
+iris |> 
+  head(2) |> 
+  filter(Species == "virginica") |> 
+  boom()
+
+# Avec l'argument clock = TRUE
+iris |> 
+  head(2) |> 
+  filter(Sepal.Length > 5) |> 
+  boom(clock = TRUE)
+
+# Avec l'argument print = list(data.frame = str)
+iris |> 
+  head(2) |> 
+  filter(Sepal.Length > 5) |> 
+  boom(clock = TRUE, print = list(data.frame = str))
