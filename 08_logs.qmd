@@ -258,7 +258,7 @@ resultat <- donnees |>
 ## logr (13/N)
 
 Si votre code est essentiellement écrit avec {dplyr} et {tidyr}, il est possible de limiter le nombre d'appels à `log_print()` en utilisant `options("logr.autolog" = TRUE)`.  
-Cela permet d'écrire dans les logs automatiquement à chaque appel d'un bloc de code.  
+Cela permet d'écrire dans les logs automatiquement (grâce à [tidylog](https://github.com/elbersb/tidylog/)) à chaque appel d'un bloc de code.  
 
 Exemple sans `log_print()` :  
 ```{.r}
