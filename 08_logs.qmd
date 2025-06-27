@@ -107,8 +107,68 @@ Création des graphiques
 ========================================================================= 
 ```
 
+- `put()` est également un alias plus court que le nom `log_print()` dont le comportement est identique.
 
 ## logr (5/N)
+
+La fonction `log_print()` (ou `put()`) permet également d'envoyer des résultats dans les logs.  
+  
+Par exemple :  
+
+```{.r}
+log_print("## Traitement des données")
+resultat <- donnees |> 
+  group_by(Species) |> 
+  summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) %>% 
+  log_print()
+```
+
+## logr (6/N)
+
+Renvoie :  
+
+```{.sh}
+## Traitement des données 
+
+NOTE: Log Print Time:  2025-06-27 14:35:15.474827 
+NOTE: Elapsed Time: 0.0325253009796143 secs 
+
+# A tibble: 3 × 2
+  Species    moy_long_petales
+  <fct>                 <dbl>
+1 setosa                 1.46
+2 versicolor             4.26
+3 virginica              5.55
+
+NOTE: Data frame has 3 rows and 2 columns. 
+
+NOTE: Log Print Time:  2025-06-27 14:35:15.572858 
+NOTE: Elapsed Time: 0.0980312824249268 secs 
+```
+
+
+## logr (7/N)
+## logr (8/N)
+
+Quelques conseils si vous savez que vous allez utiliser logr sur votre programme :  
+
+- Remplacer vos commentaires dans votre code R par des `log_print()`  
+
+A la place de :
+```{.r}
+# Traitement des données
+```
+
+Mettre ça : 
+```{.r}
+log_print("# Traitement des données")
+```
+
+
+## logr (9/N)
+
+
+## logr (10/N)
 
 {{< fa thumbs-up >}} **Avantages du browser :**  
 
