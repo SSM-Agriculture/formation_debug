@@ -167,3 +167,13 @@ iris |>
   head(2) |> 
   filter(Sepal.Length > 5) |> 
   boom(clock = TRUE, print = list(data.frame = str))
+
+# La fonction rig()
+mafonction <- function(x) {
+  res <- x^2
+  return(res)
+}
+
+rig(mafonction)(2)   # sans erreur
+rig(mafonction)("2") # avec erreur
+
