@@ -160,8 +160,42 @@ NOTE: Elapsed Time: 0.0980312824249268 secs
 
 ## logr (8/N)
 
+**En cas d'erreur/bug (ou de warnings) pendant l'exécution du programme R**, ceux-ci s'afficheront dans la log à l'endroit où ils ont eu lieu.  
+
+En complément, {logr} va isoler les messages d'erreurs et les warnings dans un fichier qui porte l'extension `.msg`.  
+
+![](img/logs_error_msg.png){fig-align="center"} 
 
 ## logr (9/N)
+
+Le traceback de R peut être très verbeux en cas d'erreurs. Si vous n'avez pas besoin de ce niveau de précision, il est possible de le désactivement ponctuellement avec `log_print("traceback" = FALSE)` ou globalement avec `options("logr.traceback" = FALSE)`.
+
+Exemple d'erreur dans les logs :  
+```{.sh}
+Error in group_by(donnees, species) : [38;5;255m [31m✖[38;5;255m Column `species` is not found.[39m 
+Traceback: 
+ [1] "10: stop(fallback)"                                                             
+ [2] "9: signal_abort(cnd, .file)"                                                    
+ [3] "8: abort(bullets, call = error_call)"                                           
+ [4] "7: group_by_prepare(.data, ..., .add = .add, error_call = current_env())"       
+ [5] "6: group_by.data.frame(donnees, species)"                                       
+ [6] "5: group_by(donnees, species)"                                                  
+ [7] "4: summarise(group_by(donnees, species), moy_long_petales = mean(Petal.Length, "
+ [8] "       na.rm = TRUE))"                                                          
+ [9] "3: print(x, ...)"                                                               
+[10] "2: log_print(.)"                                                                
+[11] "1: summarise(group_by(donnees, species), moy_long_petales = mean(Petal.Length, "
+[12] "       na.rm = TRUE)) %>% log_print()"                                          
+```
+Sans traceback :  
+```{.sh}
+Error in group_by(donnees, species) : [38;5;255m [31m✖[38;5;255m Column `species` is not found.[39m 
+```
+
+
+
+
+## logr (10/N)
 
 Quelques conseils si vous savez que vous allez utiliser logr sur votre programme :  
 
@@ -178,10 +212,13 @@ log_print("# Traitement des données")
 ```
 
 
-## logr (10/N)
-
-
 ## logr (11/N)
+
+- Si vous souhaitez raccourcir la longueur de vos logs, il est possible de supprimer les lignes blanches avec l'option `options("logr.compact" = TRUE)`.  
+  
+- Pour plus de conseils, consultez [la FAQ du package](https://logr.r-sassy.org/articles/logr-faq.html) qui est très riche.
+
+## logr (12/N)
 
 {{< fa thumbs-up >}} **Avantages du browser :**  
 
@@ -192,6 +229,3 @@ log_print("# Traitement des données")
 - Surcharge le code  
 
 
-
-
-voir /var/data/nfs/CERISE/04-Espace-Echanges/Ordonnancement/requetes_bdni/BDNI_effectifs_bovins.R
