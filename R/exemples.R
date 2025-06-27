@@ -129,3 +129,19 @@ iris  %>%
   summarise(moyenne_long_petale = mean(Petal.Length, na.rm = TRUE)) %>% 
   { tab_agr <<- . } %>% 
   rename(Especes = Species)
+
+# boomer ------------------------------------------------------------------
+
+library("boomer")
+
+# Ecriture en une ligne
+boom(iris |> head(2) |> filter(Sepal.Length > 5))
+
+# Ecriture avec des crochets (=préférable)
+boom({
+  iris |> 
+    head(2) |> 
+    filter(Sepal.Length > 5)
+})
+
+
