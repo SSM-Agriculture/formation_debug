@@ -10,7 +10,7 @@ Ses 2 principales fonctions sont :
 - `rig`()`qui permet de tracer une fonction R et affiche automatiquement les mesures de performances à chacun de ses appels.  
 
 
-## La fonction boom() (1/2)
+## La fonction boom() (1/N)
 
 3 écritures sont possibles :  
 
@@ -39,7 +39,7 @@ iris |>
   boom()
 ```
 
-## La fonction boom() (2/2)
+## La fonction boom() (2/N)
 
 Le résultat dans la console :  
 
@@ -61,7 +61,7 @@ Le résultat dans la console :
 1          5.1         3.5          1.4         0.2  setosa
 ```
 
-## La fonction boom() (2/N)
+## La fonction boom() (3/N)
 
 En cas d'erreur dans la chaîne de traitements R, la fonction `boom()` affiche les résultats intermédiaires jusqu'à l'apparition du bug.  
 
@@ -94,3 +94,102 @@ renvoie la sortie suivante :
 <0 lignes> (ou 'row.names' de longueur nulle)
 ```
 
+## La fonction boom() (4/N)
+
+La fonction `boom()` comprend 2 arguments très utiles :  
+- `clock` : booléen qui permet de quantifier le temps d'exécution de chaque étape.  
+- `print` : qui permet de fixer la manière dont sont affichés les résultats intermédiaires.  
+    - Soit `str`  
+    - Soit `glimpse`  
+    - Soit `list(data.frame = str)`  
+
+## La fonction boom() (5/N)
+
+Un exemple d'utilisation de `boom()` avec l'argument `clock = TRUE`
+
+```{.r}
+iris |> 
+  head(2) |> 
+  filter(Sepal.Length > 5) |> 
+  boom(clock = TRUE)
+```
+
+Renvoie :  
+
+```{.r}
+💣 filter 
+· 💣 💥 head(iris, 2) 
+time: 0.215 ms
+·   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+· 1          5.1         3.5          1.4         0.2  setosa
+· 2          4.9         3.0          1.4         0.2  setosa
+· 
+· 💣 💥 Sepal.Length > 5 
+time: 0.027 ms
+· [1]  TRUE FALSE
+· 
+```
+```{.r}
+💥 filter(head(iris, 2), Sepal.Length > 5) 
+time: 0.001 s
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+> 
+```
+
+## La fonction boom() (6/N)
+
+Un exemple d'utilisation de `boom()` avec l'argument `print = list(data.frame = str)`
+
+```{.r}
+iris |> 
+  head(2) |> 
+  filter(Sepal.Length > 5) |> 
+  boom(clock = TRUE, print = list(data.frame = str))
+```
+
+Renvoie :  
+
+```{.r}
+💣 filter 
+· 💣 💥 head(iris, 2) 
+time: 0.214 ms
+· 'data.frame':	2 obs. of  5 variables:
+·  $ Sepal.Length: num  5.1 4.9
+·  $ Sepal.Width : num  3.5 3
+·  $ Petal.Length: num  1.4 1.4
+·  $ Petal.Width : num  0.2 0.2
+·  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1
+· 
+· 💣 💥 Sepal.Length > 5 
+time: 0.021 ms
+· [1]  TRUE FALSE
+· 
+```
+```{.r}
+💥 filter(head(iris, 2), Sepal.Length > 5) 
+time: 0.002 s
+'data.frame':	1 obs. of  5 variables:
+ $ Sepal.Length: num 5.1
+ $ Sepal.Width : num 3.5
+ $ Petal.Length: num 1.4
+ $ Petal.Width : num 0.2
+ $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1
+
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+```
+
+## La fonction boom() (7/N)
+
+Quelques options utiles :  
+
+- Pour fixer l'option clock à TRUE tout le temps : `options(boomer.clock = TRUE)`   
+- Pour fixer l'option clock à TRUE tout le temps : `options(boomer.print = str)`   
+
+Pour aller plus loin :
+
+{boomer} contient les fonctions `boom_on()` et `boom_off()` qui peuvent être utilisées dans le mode debug pas à pas de RStudio (voir [cette page](https://moodymudskipper.github.io/boomer/#boom_on-and-boom_off)).
