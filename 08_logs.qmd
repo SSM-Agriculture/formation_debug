@@ -20,6 +20,14 @@ Le package {logr} présente plusieurs avantages :
 - Il fournit automatique un en-tête complet très utile au débogage  
 - L'horadatage est automatique (utile pour des mesures de performances)  
 
+## logr (1/N)
+
+Avec {logr}, il y a besoin de seulement 3 étapes pour créer un fichier de log :
+  
+- Ouvrir le fichier de log (avec `log_open()`)  
+- Ecrire dans le fichier de log (avec `log_print()`)  
+- Fermer le fichier de log (avec `log_close()`)  
+
 
 
 voir /var/data/nfs/CERISE/04-Espace-Echanges/Ordonnancement/requetes_bdni/BDNI_effectifs_bovins.R
