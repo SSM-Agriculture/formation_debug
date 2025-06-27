@@ -194,5 +194,45 @@ resultat <- donnees |>
   summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
 
 # Fermeture de la log
+
+### 2. Exemple avec erreur
+
+# Ouverture de la log
+log_open("ma_log.log")
+
+log_print("## Lecture des données")
+donnees <- readRDS("data/iris.rds")
+
+log_print("## Traitement des données")
+resultat <- donnees |> 
+  group_by(species) |> 
+  summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
+
+# Fermeture de la log
 log_close()
+
+### 3. Exemple en logguant une partie du pgm
+
+options("logr.on" = FALSE)
+
+# Un 1er traitement
+iris |> names()
+
+# Activation de logr
+options("logr.on" = TRUE)
+
+# Ouverture de la log
+log_open("ma_log.log")
+
+log_print("## Lecture des données")
+donnees <- readRDS("data/iris.rds")
+
+# Fermeture de la log
+log_close()
+
+# La suite du programme
+resultat <- donnees |> 
+  group_by(Species) |> 
+  summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
+
 
