@@ -12,7 +12,7 @@ La fonction browser() est un compromis entre la fonction print() et les breakpoi
 
 Par exemple :  
 
-```{.r}
+```{.r code-line-numbers="3"}
 exemple1 <- function(indicateur) {
   
   browser() # <- on ajoute un browser()
