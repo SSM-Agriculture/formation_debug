@@ -233,6 +233,28 @@ x :
 
 ## La fonction rig() (3/N)
 
+Avec une erreur :  
+
+```{.r}
+rig(mafonction)("2")
+```
+
+Renvoie :  
+
+```{.r}
+👇 mafonction
+x :
+[1] "2"
+💣 💥 x^2 
+Error: simpleError/error/condition
+Erreur dans .Primitive("^")(x, 2) : 
+  argument non numérique pour un opérateur binaire
+👆 mafonction
+```
+
+
+## La fonction rig() (4/N)
+
 Pour arrêter de surveiller une fonction, il existe la fonction `unrig()`.
 
 ## La fonction rig() (3/N)
