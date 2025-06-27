@@ -265,7 +265,8 @@ Quelques informations complémentaires :
 ## Avantages/Inconvénients de {boomer}
 
 {{< fa thumbs-up >}} **Avantages de {boomer} :**  
-- Permet de "décortiquer" facilement les chaînes de traitements
+- Permet de "décortiquer" facilement les blocs de code (avec `boom()`)  
+- Permet de "décortiquer" facilement les fonctions (avec `rig()`)  
 - Peut aider à debugger les applications Shiny  
 
 <br>
