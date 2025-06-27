@@ -255,7 +255,10 @@ Erreur dans .Primitive("^")(x, 2) :
 
 ## La fonction rig() (4/N)
 
-Pour arrêter de surveiller une fonction, il existe la fonction `unrig()`.
+Quelques informations complémentaires :  
+
+- Pour arrêter de surveiller une fonction, il existe la fonction `unrig()`.  
+- Si vous travaillez sur des fonctions à inclure dans un package, la fonction `rig_in_namespace()` est très utile.  
 
 ## La fonction rig() (3/N)
 
