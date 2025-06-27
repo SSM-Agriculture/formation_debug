@@ -177,3 +177,22 @@ mafonction <- function(x) {
 rig(mafonction)(2)   # sans erreur
 rig(mafonction)("2") # avec erreur
 
+
+# Logs --------------------------------------------------------------------
+
+### 1. Exemple
+
+# Ouverture de la log
+log_open("ma_log.log")
+
+log_print("## Lecture des données")
+donnees <- readRDS("data/iris.rds")
+
+log_print("## Traitement des données")
+resultat <- donnees |> 
+  group_by(Species) |> 
+  summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
+
+# Fermeture de la log
+log_close()
+
