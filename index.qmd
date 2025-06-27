@@ -111,7 +111,9 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 
 {{< include 08_logs.qmd >}}
 
-## Bibliographie
+# Bibliographie {.backgroundTitre}
+
+## Liens complémentaires
 
 Pour en savoir plus :  
 
