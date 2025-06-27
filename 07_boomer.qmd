@@ -10,16 +10,54 @@ Ses 2 principales fonctions sont :
 - `rig`()`qui permet de tracer une fonction R et affiche automatiquement les mesures de performances à chacun de ses appels.  
 
 
-## (2/N)
+## La fonction boom() (1/N)
 
-Un 1er exemple :  
+3 écritures sont possibles :  
 
+- Ecriture en une ligne
 ```{.r}
 
+boom(iris |> head(2) |> filter(Sepal.Length > 5))
+```
+<br>
 
+- Ecriture avec des crochets
+```{.r}
+boom({
+  iris |> 
+    head(2) |> 
+    filter(Sepal.Length > 5)
+})
+```
+<br>
 
+- Ecriture à la fin de la chaîne de traitement
+```{.r}
+iris |> 
+  head(2) |> 
+  filter(Sepal.Length > 5) |> 
+  boom()
 ```
 
-## Le package boomer (3/N)
-## Le package boomer (4/N)
-## Le package boomer (5/N)
+## La fonction boom() (2/N)
+
+Le résultat dans la console :  
+
+```{.r}
+💣 filter(head(iris, 2), Sepal.Length > 5) 
+· 💣 💥 head(iris, 2) 
+·   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+· 1          5.1         3.5          1.4         0.2  setosa
+· 2          4.9         3.0          1.4         0.2  setosa
+· 
+· 💣 💥 Sepal.Length > 5 
+· [1]  TRUE FALSE
+· 
+💥 filter(head(iris, 2), Sepal.Length > 5) 
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+```
+
