@@ -65,9 +65,7 @@ Le résultat dans la console :
 
 ## La fonction boom() (4/8)
 
-En cas d'erreur dans la chaîne de traitements R, la fonction `boom()` affiche les résultats intermédiaires jusqu'à l'apparition du bug.  
-
-Ce code...  
+En cas d'erreur, la fonction `boom()` affiche les résultats intermédiaires jusqu'à l'apparition du bug.  
 
 ```{.r}
 iris |> 
