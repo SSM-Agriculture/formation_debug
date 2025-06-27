@@ -1,14 +1,25 @@
 # Les logs {.backgroundTitre}
 
-## Les logs (1/N)
+## Les logs
 
 Pour compléter les différents outils de débogage, il reste un pratique essentielle à présenter qui est **l'écriture des logs**.  
 Les logs permettent de tracer l'historique des actions, de suivre le cheminement logique du code R et ainsi de repérer l'origine des bugs/erreurs.  
 
-Cette pratique est tellement répandue et utile qu'il existe de très nombreux packages R : [{futile.logger}](https://cran.r-project.org/web/packages/futile.logger/index.html), [{logging}](https://cran.r-project.org/web/packages/logging/index.html), [{lgr}](https://cran.r-project.org/web/packages/lgr/index.html), [{loggit}](https://cran.r-project.org/web/packages/loggit/index.html),
+Cette pratique est tellement répandue et utile qu'il existe de très nombreux packages R : 
+[{logger}](https://cran.r-project.org/web/packages/logger/index.html), [{futile.logger}](https://cran.r-project.org/web/packages/futile.logger/index.html), [{logging}](https://cran.r-project.org/web/packages/logging/index.html), [{lgr}](https://cran.r-project.org/web/packages/lgr/index.html), [{loggit}](https://cran.r-project.org/web/packages/loggit/index.html),
 [{log4r}](https://cran.r-project.org/web/packages/log4r/index.html) ...  
   
 
-Dans cette présentation, nous allons utiliser le package [{logger}](https://daroczig.github.io/logger/index.html).
+Dans cette présentation, nous allons utiliser le package [{logr}](https://logr.r-sassy.org/index.html).
+
+## Pourquoi logr ?
+
+Le package {logr} présente plusieurs avantages :  
+  
+- Il est très simple à utiliser  
+- Il fournit automatique un en-tête complet très utile au débogage  
+- L'horadatage est automatique (utile pour des mesures de performances)  
+
+
 
 voir /var/data/nfs/CERISE/04-Espace-Echanges/Ordonnancement/requetes_bdni/BDNI_effectifs_bovins.R
