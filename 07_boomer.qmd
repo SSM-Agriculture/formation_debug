@@ -11,7 +11,7 @@ Ses 2 principales fonctions sont :
 - `rig`()`qui permet de tracer une fonction R et affiche automatiquement les mesures de performances à chacun de ses appels.  
 
 
-## La fonction boom() (1/8)
+## La fonction boom() (1/10)
 
 3 écritures sont possibles :  
 
@@ -31,9 +31,10 @@ boom({
 })
 ```
 
-## La fonction boom() (2/8)
+## La fonction boom() (2/10)
 
-- Ecriture à la fin de la chaîne de traitement
+- Ecriture à la fin de la chaîne de traitement (préférable)  
+  
 ```{.r}
 iris |> 
   head(2) |> 
@@ -41,7 +42,7 @@ iris |>
   boom()
 ```
 
-## La fonction boom() (3/8)
+## La fonction boom() (3/10)
 
 Le résultat dans la console :  
 
@@ -63,7 +64,7 @@ Le résultat dans la console :
 1          5.1         3.5          1.4         0.2  setosa
 ```
 
-## La fonction boom() (4/8)
+## La fonction boom() (4/10)
 
 En cas d'erreur, la fonction `boom()` affiche les résultats intermédiaires jusqu'à l'apparition du bug.  
 
@@ -94,16 +95,18 @@ renvoie la sortie suivante :
 <0 lignes> (ou 'row.names' de longueur nulle)
 ```
 
-## La fonction boom() (5/8)
+## La fonction boom() (5/10)
 
 La fonction `boom()` comprend 2 arguments très utiles :  
+
 - `clock` : booléen qui permet de quantifier le temps d'exécution de chaque étape.  
-- `print` : qui permet de fixer la manière dont sont affichés les résultats intermédiaires.  
+- `print` : qui permet de fixer la manière dont sont affichés les résultats intermédiaires. 
+  
     - Soit `str`  
     - Soit `glimpse`  
     - Soit `list(data.frame = str)`  
 
-## La fonction boom() (6/8)
+## La fonction boom() (6/10)
 
 Un exemple d'utilisation de `boom()` avec l'argument `clock = TRUE`
 
@@ -114,7 +117,7 @@ iris |>
   boom(clock = TRUE)
 ```
 
-Renvoie :  
+Renvoie (partie 1) :  
 
 ```{.r}
 💣 filter 
@@ -129,6 +132,11 @@ time: 0.027 ms
 · [1]  TRUE FALSE
 · 
 ```
+
+## La fonction boom() (7/10)
+
+Renvoie (partie 2) :  
+  
 ```{.r}
 💥 filter(head(iris, 2), Sepal.Length > 5) 
 time: 0.001 s
@@ -140,7 +148,7 @@ time: 0.001 s
 > 
 ```
 
-## La fonction boom() (7/8)
+## La fonction boom() (8/10)
 
 Un exemple d'utilisation de `boom()` avec l'argument `print = list(data.frame = str)`
 
@@ -151,7 +159,7 @@ iris |>
   boom(clock = TRUE, print = list(data.frame = str))
 ```
 
-Renvoie :  
+Renvoie (partie 1) :   
 
 ```{.r}
 💣 filter 
@@ -169,6 +177,11 @@ time: 0.021 ms
 · [1]  TRUE FALSE
 · 
 ```
+
+## La fonction boom() (9/10)
+
+Renvoie (partie 2) : 
+  
 ```{.r}
 💥 filter(head(iris, 2), Sepal.Length > 5) 
 time: 0.002 s
@@ -183,12 +196,14 @@ time: 0.002 s
 1          5.1         3.5          1.4         0.2  setosa
 ```
 
-## La fonction boom() (8/8)
+## La fonction boom() (10/10)
 
-Quelques options utiles :  
+**Quelques options utiles :**  
 
 - Pour fixer l'option clock à TRUE tout le temps : `options(boomer.clock = TRUE)`   
-- Pour fixer l'option clock à TRUE tout le temps : `options(boomer.print = str)`   
+- Pour fixer l'option clock à TRUE tout le temps : `options(boomer.print = str)`  
+- Voir [ici](https://github.com/moodymudskipper/boomer/blob/master/R/boomer-package.R) pour les options disponibles...  
+
 
 Pour aller plus loin :
 

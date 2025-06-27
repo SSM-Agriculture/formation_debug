@@ -43,7 +43,9 @@ editor:
 
 <br>
 
-Le débogage, ou debugging en anglais, est une étape cruciale dans le développement de tout programme informatique.  
+**Le débogage, ou debugging en anglais, est une étape cruciale dans le développement de tout programme informatique.**  
+
+<br>
 
 Cette présentation vous présente quelques outils que vous avez déjà à disposition sous **votre RStudio sur Cerise** afin de vous aider à trouver par vous-même la source de vos bugs.
 
