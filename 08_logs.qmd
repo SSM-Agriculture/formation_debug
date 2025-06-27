@@ -84,6 +84,9 @@ Log Start Time: 2025-06-27 14:18:06.072628
 ========================================================================= 
 ```
 
+## logr (5/N)
+
+Partie 2 :
 ```{.sh}
 ## Lecture des données 
 
@@ -102,7 +105,7 @@ Log Elapsed Time: 0 00:00:00
 ```
 
 
-## logr (5/N)
+## logr (6/N)
 
 La fonction `log_print()` a également un alias utile pour la présentation des logs :  
   
@@ -120,7 +123,7 @@ Création des graphiques
 
 - `put()` est également un alias plus court que le nom `log_print()` dont le comportement est identique.
 
-## logr (6/N)
+## logr (7/N)
 
 La fonction `log_print()` (ou `put()`) permet également d'envoyer des résultats dans les logs.  
   
@@ -134,7 +137,7 @@ resultat <- donnees |>
   log_print()
 ```
 
-## logr (7/N)
+## logr (8/N)
 
 Renvoie :  
 
@@ -158,7 +161,7 @@ NOTE: Elapsed Time: 0.0980312824249268 secs
 ```
 
 
-## logr (8/N)
+## logr (9/N)
 
 **En cas d'erreur/bug (ou de warnings) pendant l'exécution du programme R**, ceux-ci s'afficheront dans la log à l'endroit où ils ont eu lieu.  
 
@@ -166,7 +169,7 @@ En complément, {logr} va isoler les messages d'erreurs et les warnings dans un 
 
 ![](img/logs_error_msg.png){fig-align="center"} 
 
-## logr (9/N)
+## logr (10/N)
 
 Le traceback de R peut être très verbeux en cas d'erreurs. Si vous n'avez pas besoin de ce niveau de précision, il est possible de le désactivement ponctuellement avec `log_print("traceback" = FALSE)` ou globalement avec `options("logr.traceback" = FALSE)`.
 
@@ -190,7 +193,7 @@ Error in group_by(donnees, species) : [38;5;255m [31m✖[38;5;255m Column `speci
 ```
 
 
-## logr (10/N)
+## logr (11/N)
 
 Quelques conseils si vous savez que vous allez utiliser logr sur votre programme :  
 
@@ -215,7 +218,7 @@ lf <- log_open(nom)
 ```
 
 
-## logr (11/N)
+## logr (12/N)
 
 Il est possible de **logguer seulement une partie d'un script R**. Pour cela, il existe les options `options("logr.on" = FALSE)` et `options("logr.on" = TRUE)`.  
 
@@ -245,7 +248,7 @@ resultat <- donnees |>
   summarise(moy_long_petales = mean(Petal.Length, na.rm = TRUE)) 
 ```
 
-## logr (12/N)
+## logr (13/N)
 
 - Si vous souhaitez raccourcir la longueur de vos logs, il est possible de supprimer les lignes blanches avec l'option `options("logr.compact" = TRUE)`.  
 
@@ -255,7 +258,7 @@ resultat <- donnees |>
   
 - Pour plus de conseils, consultez [la FAQ du package](https://logr.r-sassy.org/articles/logr-faq.html) qui est très riche.
 
-## logr (13/N)
+## logr (14/N)
 
 Si votre code est essentiellement écrit avec {dplyr} et {tidyr}, il est possible de limiter le nombre d'appels à `log_print()` en utilisant `options("logr.autolog" = TRUE)`.  
 Cela permet d'écrire dans les logs automatiquement (grâce à [tidylog](https://github.com/elbersb/tidylog/)) à chaque appel d'un bloc de code.  
@@ -276,7 +279,7 @@ resultat <- donnees |>
 log_close()
 ```
 
-## logr (13/N)
+## logr (15/N)
 
 Renvoie la log suivante :  
 ```{.sh}
