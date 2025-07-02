@@ -171,7 +171,7 @@ En complément, {logr} va isoler les messages d'erreurs et les warnings dans un 
 
 ## logr (10/15)
 
-Le traceback de R peut être très verbeux en cas d'erreurs. Si vous n'avez pas besoin de ce niveau de précision, il est possible de le désactivement ponctuellement avec `log_print("traceback" = FALSE)` ou globalement avec `options("logr.traceback" = FALSE)`.
+Le traceback de R peut être très verbeux en cas d'erreurs. Si vous n'avez pas besoin de ce niveau de précision, il est possible de le désactiver ponctuellement avec `log_print("traceback" = FALSE)` ou globalement avec `options("logr.traceback" = FALSE)`.
 
 Exemple d'erreur dans les logs :  
 ```{.sh}
