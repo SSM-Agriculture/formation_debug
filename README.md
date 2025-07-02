@@ -1,6 +1,6 @@
 # Présentation des fonctionnalités de debugging/débogage en R
 
-Support de formation des fonctionnalités de debugging/débogaeau @SSM-Agriculture. 
+Support de formation des fonctionnalités de debugging/débogage au @SSM-Agriculture. 
 
 > Pour un affichage optimisé de la présentation il est conseillé d'utiliser un navigateur basé sur Chromium (par exemple les navigateurs Edge, Chrome, Brave...).
 
