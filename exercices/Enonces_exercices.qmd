@@ -1,0 +1,6 @@
+---
+title: "Enoncés exercices - module debugging/débogage"
+format: html
+---
+
+## Exercice 1
