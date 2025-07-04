@@ -44,7 +44,7 @@ calculs <- function(niveau_zoom) {
   
   if (niveau_zoom %in% regions_utilisateur) {
     RESULTAT_ZOOM <- RESULTAT |> 
-      filter(REG == niveau_zoom) |> 
+      filter(REG == zoom) |> 
       summarise(
         region = first(LIB_REG),
         nb_dep = n(),
