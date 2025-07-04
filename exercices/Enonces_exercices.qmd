@@ -68,8 +68,10 @@ Suite de l'exercice et appel de la fonction `calculs()` :
 # Choix du zoom
 zoom <- "94"
 
+# Compilation des fonctions
 source("fonctions.R")
 
+# Lancement des calculs
 calculs(zoom)
 ```
 
