@@ -1,0 +1,12 @@
+# Exercice 3 {.backgroundTitre}
+
+## Énoncé (partie 1)
+::: {.callout-tip icon=false}
+
+- Copier-coller le code R suivant et résoudre les erreurs avec votre outil préféré :  
+  
+```{.r}
+
+```
+:::
+

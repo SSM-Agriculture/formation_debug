@@ -103,13 +103,19 @@ Erreur dans exemple1("petale") : objet 'resultat' introuvable
 
 {{< include 04_debug.qmd >}}
 
+{{< include A_exercice1.qmd >}}
+
 {{< include 05_recover.qmd >}}
 
 {{< include 06_astuce.qmd >}}
 
 {{< include 07_boomer.qmd >}}
 
+{{< include B_exercice2.qmd >}}
+
 {{< include 08_logs.qmd >}}
+
+{{< include C_exercice3.qmd >}}
 
 # Bibliographie {.backgroundTitre}
 
