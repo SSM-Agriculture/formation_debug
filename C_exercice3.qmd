@@ -89,7 +89,7 @@ Log Start Time: 2025-07-07 16:08:38.451985
 ::: {.callout-tip icon=false}
 
 ```{.sh}
-Affichage var. d'environnement 
+Affichage var. environnement 
 
 http://rie.proxy.national.agri:8080/ 
 
