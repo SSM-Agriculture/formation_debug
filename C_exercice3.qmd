@@ -64,6 +64,8 @@ summary(modele)
 
 ## Log souhaitée (en-tête)
 
+Lien vers [la log complète](https://github.com/SSM-Agriculture/formation_debug/blob/main/exercices/corrections/log/log_exo3.log).  
+  
 ::: {.callout-tip icon=false}
 
 ```{.sh}
