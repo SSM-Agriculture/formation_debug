@@ -1,0 +1,85 @@
+# Exercice 1 {.backgroundTitre}
+
+## Énoncé (partie 1)
+::: {.callout-tip icon=false title="Ex. 1"}
+
+- Copier-coller le code R suivant et résoudre les erreurs avec votre outil préféré :  
+  
+```{.r}
+library(readr)
+library(dplyr)
+
+### Import des fichiers
+# - COG 2025
+COG_2025_04_01 <- read_delim("~/CERISE/02-Espace-de-Production/000_Referentiels/0040_Geo/COG/2025/COG_2025_04_01.csv", 
+                             delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+# - Nomenclature des régions
+regions <- readRDS("donnees/regions.rds")
+
+# Définition des régions de l'utilisateur
+regions_utilisateur <- c("93","94")
+
+RESULTAT <- COG_2025_04_O1  |>  
+  filter(REG %in% regions_utilisateur) |> 
+  left_join(regions, by = c("REG" = "Code_region")) |> 
+  summarise(
+    nb_communes = n(),
+    .by = c(libelle_region,dep)) |>
+  arrange(desc(libelle_region),desc(nb_communes))
+```
+:::
+
+## Énoncé (partie 2)
+
+::: {.callout-tip icon=false title="Ex. 1"}
+
+Voici la fonction `calculs()` à mettre dans un fichier R `fonctions.R`.  
+  
+  
+```{.r}
+#' @name calculs
+#'
+#' @param niveau_zoom indique le niveau de zoom souhaité par l'utilisateur
+#'
+#' @return un dataframe avec différentes statistiques
+calculs <- function(niveau_zoom) {
+  
+  if (niveau_zoom %in% regions_utilisateur) {
+    RESULTAT_ZOOM <- RESULTAT |> 
+      filter(REG == zoom) |> 
+      summarise(
+        region = first(LIB_REG),
+        nb_dep = n(),
+        total_communes = sum(NB_COMMUNES),
+        moyenne_par_dep = mean(NB_COMMUNES),
+        min_dep = min(NB_COMMUNES),
+        max_dep = max(NB_COMMUNES)
+      )
+    return(RESULTAT)
+  } else {
+    return(print("Le zoom n'est pas disponible dans les données"))
+  }
+  
+}
+```
+:::
+
+## Énoncé (partie 3)
+
+::: {.callout-tip icon=false title="Ex. 1"}
+
+Suite de l'exercice et appel de la fonction `calculs()` :  
+  
+
+```{.r}
+# Choix du zoom
+zoom <- "94"
+
+# Compilation des fonctions
+source("fonctions.R")
+
+# Lancement des calculs
+calculs(zoom)
+```
+:::
