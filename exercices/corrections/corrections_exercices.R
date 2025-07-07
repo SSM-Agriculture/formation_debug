@@ -30,3 +30,23 @@ source("fonctions.R")
 
 # Lancement des calculs
 calculs(zoom)
+
+
+#### EXERCICE 2 ####
+
+options(boomer.clock = TRUE)
+
+library(boomer)
+
+# - Nomenclature des régions
+regions <- readRDS("donnees/regions.rds")
+
+resultat <-  readRDS("/var/data/nfs/CERISE/00-Espace-Personnel/damien.dotta/CERISE/03-Espace-de-Diffusion/100_Comptes_Revenus/10010_RICA/10_Donnees_definitives/RICA_2023/format_rds/rica23.rds") %>%
+  # Sélection des colonnes et filtre sur les lignes avant la jointure
+  select(IDENT,SIRET,REGIO) %>%
+  filter(REGIO == "11") %>%
+  # Conversion au format caractères pour la jointure
+  mutate(REGIO = as.character(REGIO)) |> 
+  left_join(regions,
+            by = c("REGIO" = "code_region")) %>% 
+  boom()
