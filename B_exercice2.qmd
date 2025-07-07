@@ -3,7 +3,7 @@
 ## Énoncé
 ::: {.callout-tip icon=false}
 
-- Copier-coller le code R suivant, résoudre les erreurs avec le package {boomer} puis identifié les étapes particulièrement chronophages du programme : 
+- Copier-coller le code R suivant, résoudre les erreurs avec le package {boomer}, identifier l'étape chronophage du programme et faire en sorte que le code s'exécute plus rapidement : 
   
 ```{.r}
 options(boomer.clock = TRUE)
