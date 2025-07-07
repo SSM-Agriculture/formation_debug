@@ -7,8 +7,8 @@ A l'intérieur d'une chaîne de traitements {tidyverse} avec %>%, il est possibl
 **Si on veut simplement afficher le résultat intermédiaire, la syntaxe générale est :**  
 
 ```{.r}
-data |>
-etape_une() |>
+data %>% 
+etape_une() %>% 
 { print(head(.)); . } %>% 
 etape_deux()
 ```
@@ -42,8 +42,8 @@ On obtient dans la console :
 **Si on veut stocker le résultat intermédiaire, , la syntaxe générale est**  :
 
 ```{.r}
-data |>
-etape_une() |>
+data %>% 
+etape_une() %>% 
 { result_interm <<- . } %>% # On peut donner le nom que l'on veut au résultat intermédiaire
 etape_deux()
 ```
