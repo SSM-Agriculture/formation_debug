@@ -1,12 +1,25 @@
 # Exercice 2 {.backgroundTitre}
 
-## Énoncé (partie 1)
+## Énoncé
 ::: {.callout-tip icon=false}
 
-- Copier-coller le code R suivant et résoudre les erreurs avec votre outil préféré :  
+- Copier-coller le code R suivant, résoudre les erreurs avec le package {boomer} puis identifié les étapes particulièrement chronophages du programme : 
   
 ```{.r}
+options(boomer.clock = TRUE)
 
+library(boomer)
+
+# - Nomenclature des régions
+regions <- readRDS("donnees/regions.rds")
+
+resultat <-  readRDS("/var/data/nfs/CERISE/00-Espace-Personnel/damien.dotta/CERISE/03-Espace-de-Diffusion/100_Comptes_Revenus/10010_RICA/10_Donnees_definitives/RICA_2023/format_rds/rica23.rds") %>% 
+  left_join(regions,
+            by = c("REGIO" = "code_region")) %>% 
+  filter(REGIO == "11") %>% 
+  select(IDENT,SIRET,REGIO) %>%
+  boom()
 ```
 :::
+
 
