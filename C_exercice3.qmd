@@ -3,10 +3,171 @@
 ## Énoncé (partie 1)
 ::: {.callout-tip icon=false}
 
-- Copier-coller le code R suivant et résoudre les erreurs avec votre outil préféré :  
+- Modifier le code R suivant afin d'obtenir la log souhaitée avec {logr}.
   
 ```{.r}
+Sys.getenv("http_proxy")
 
+set.seed(123)
+n <- 10000000
+species <- c("setosa", "versicolor", "virginica")
+
+simu_data <- data.frame(
+  Species = sample(species, n, replace = TRUE),
+  Sepal.Length = rnorm(n, mean = 6, sd = 0.8),
+  Sepal.Width  = rnorm(n, mean = 3, sd = 0.5),
+  Petal.Length = rnorm(n, mean = 4, sd = 1.2),
+  Petal.Width  = rnorm(n, mean = 1.2, sd = 0.4)
+)
+
+# Calculer les moyennes et écarts-types
+resultats <- simu_data %>%
+  group_by(Species) %>%
+  summarise(
+    mean_sepal_length = mean(Sepal.Length),
+    sd_sepal_length = sd(Sepal.Length),
+    mean_petal_length = mean(Petal.Length),
+    sd_petal_length = sd(Petal.Length),
+    n = n()
+  )
 ```
 :::
 
+## Énoncé (partie 2)
+
+::: {.callout-tip icon=false}
+
+```{.r}
+# Prédire Petal.Length en fonction de Sepal.Length
+modele <- lm(Petal.Length ~ Sepal.Length, data = simu_data)
+
+
+# Affichage d’un sous-échantillon pour la clarté du graphique
+simu_data_sample <- simu_data %>% sample_n(5000)
+
+# Création du graphique
+ggplot(simu_data_sample, aes(x = Sepal.Length, y = Petal.Length)) +
+  geom_point(alpha = 0.2, color = "steelblue") +
+  geom_smooth(method = "lm", color = "darkred", se = FALSE) +
+  labs(
+    title = "Régression linéaire : Petal.Length ~ Sepal.Length",
+    x = "Longueur du sépale",
+    y = "Longueur du pétale"
+  ) +
+  theme_minimal()
+
+
+# Résumé statistique du modèle
+summary(modele)
+```
+:::
+
+## Log souhaitée (en-tête)
+
+::: {.callout-tip icon=false}
+
+```{.sh}
+========================================================================= 
+Log Path: ./log/log_exo3.log 
+Program Path: /var/data/nfs/CERISE/00-Espace-Personnel/damien.dotta/test_log.R 
+Working Directory: /var/data/nfs/CERISE/00-Espace-Personnel/damien.dotta 
+User Name: damien.dotta 
+R Version: 4.4.1 (2024-06-14) 
+Machine: stats-prod-rstudio-2.zsg.cdpagri.fr x86_64 
+Operating System: Linux 4.18.0-372.32.1.el8_6.x86_64 #1 SMP Fri Oct 7 12:35:10 EDT 2022 
+Base Packages: stats graphics grDevices utils datasets methods base 
+Other Packages: tidylog_1.1.0 ggplot2_3.5.1 dplyr_1.1.4 logr_1.3.8 common_1.1.3 
+Log Start Time: 2025-07-07 16:08:38.451985 
+========================================================================= 
+```
+:::
+
+## Log souhaitée (body - partie 1)
+
+::: {.callout-tip icon=false}
+
+```{.sh}
+Affichage var. d'environnement 
+
+http://rie.proxy.national.agri:8080/ 
+
+========================================================================= 
+Création jeu de données 
+========================================================================= 
+
+Aperçu des données 
+
+     Species Sepal.Length Sepal.Width Petal.Length Petal.Width
+1  virginica     6.271247    2.846290     5.953113   1.8597240
+2  virginica     5.470469    3.518637     4.072064   1.3026571
+3  virginica     7.320498    3.167360     3.158868   1.6208414
+4 versicolor     5.408678    3.246124     4.136058   0.8419174
+5  virginica     5.968974    2.366812     2.806698   0.8434953
+6 versicolor     4.926451    3.220669     1.126885   1.9263393
+```
+:::
+
+## Log souhaitée (body - partie 2)
+
+::: {.callout-tip icon=false}
+
+```{.sh}
+========================================================================= 
+Traitement des données 
+========================================================================= 
+
+group_by: one grouping variable (Species)
+
+summarise: now 3 rows and 6 columns, ungrouped
+
+========================================================================= 
+Analyse de données 
+========================================================================= 
+
+2025-07-07 16:08:44# Prédire Petal.Length en fonction de Sepal.Length 
+
+2025-07-07 16:08:48# Graphique sur un sous-échantillon 
+
+sample_n: removed 9,995,000 rows (>99%), 5,000 rows remaining
+```
+:::
+
+## Log souhaitée (body - partie 3)
+
+::: {.callout-tip icon=false}
+
+```{.sh}
+========================================================================= 
+A retenir 
+========================================================================= 
+Call:
+lm(formula = Petal.Length ~ Sepal.Length, data = simu_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.2654 -0.8094  0.0001  0.8095  6.3613 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.9968280  0.0028715 1391.89   <2e-16 ***
+Sepal.Length 0.0003701  0.0004744    0.78    0.435    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.2 on 9999998 degrees of freedom
+Multiple R-squared:  6.087e-08,	Adjusted R-squared:  -3.913e-08 
+F-statistic: 0.6087 on 1 and 9999998 DF,  p-value: 0.4353
+```
+:::
+
+## Log souhaitée (pied de page)
+
+::: {.callout-tip icon=false}
+
+```{.sh}
+========================================================================= 
+Log End Time: 2025-07-07 16:09:00.851627 
+Log Elapsed Time: 0 00:00:22 
+========================================================================= 
+```
+:::
