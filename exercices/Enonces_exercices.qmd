@@ -90,7 +90,7 @@ library(boomer)
 # - Nomenclature des régions
 regions <- readRDS("donnees/regions.rds")
 
-resultat <-  readRDS("/var/data/nfs/CERISE/00-Espace-Personnel/damien.dotta/CERISE/03-Espace-de-Diffusion/100_Comptes_Revenus/10010_RICA/10_Donnees_definitives/RICA_2023/format_rds/rica23.rds") %>% 
+resultat <-  readRDS("/root_cerise/03-Espace-de-Diffusion/100_Comptes_Revenus/10010_RICA/10_Donnees_definitives/RICA_2023/format_rds/rica23.rds") %>% 
   left_join(regions,
             by = c("REGIO" = "code_region")) %>% 
   filter(REGIO == "11") %>% 
