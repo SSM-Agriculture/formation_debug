@@ -1,6 +1,9 @@
 ---
 title: "Enoncés exercices - module debugging/débogage"
-format: html
+format:
+  docx:
+    number-sections: true
+    highlight-style: github
 ---
 
 ## Exercice 1
