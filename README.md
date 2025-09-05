@@ -4,4 +4,4 @@ Support de formation des fonctionnalités de debugging/débogage au @SSM-Agricul
 
 > Pour un affichage optimisé de la présentation il est conseillé d'utiliser un navigateur basé sur Chromium (par exemple les navigateurs Edge, Chrome, Brave...).
 
-Ce diaporama est accessible à cette adresse : https:///ssm-agriculture.github.io/presentation_debug/
+Ce diaporama est accessible à cette adresse : https://ssm-agriculture.github.io/presentation_debug/
